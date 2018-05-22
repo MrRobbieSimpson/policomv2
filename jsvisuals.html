@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <meta charset="UTF-8">
+  <title>JS Visuals. Data Visualisation</title>
+	<link rel="stylesheet" href="css/nav.css">
+      <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:400,700'>
+      <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Poppins:400,700'>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+      <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+      <link rel="stylesheet" href="css/style.css">
+					<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+      <script src="js/snap.svg-min.js"></script>
+            <link rel="shortcut icon" href="poli-con.ico" type="image/x-icon">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header>
+
+</header>
+<body>
+	<script>
+document.body.classList.add('fade');
+</script>
+	<div id="navigationwrapper">
+		 <div class="container menu">
+			 <nav>
+					<ul>
+						 <li><a href="index.html">Home</a></li>
+						 <li><a href="about.html">About</a></li>
+						 <li><a href="visualart.html">Visual Art</a></li>
+						 <li><a href="jsvisuals.html">JS Visuals</a></li>
+						 <li><a href="https://drive.google.com/drive/folders/1N2ecQgcJp6pNu9kcmvAdIMmtMtwfth68" target="_blank">Drive</a></li>
+						 <li><a href="mailto:hi@rob-simpson.co.uk?">Contact</a></li>
+					</ul>
+			 </nav>
+				<div class="social">
+					 <a href="https://twitter.com/ProjectPolicom" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					 <a href="https://medium.com/@MrRobSimpson" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a>
+					 <a href="https://github.com/MrRobbieSimpson/policom" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+
+				</div>
+		 </div>
+	</div>
+
+	<div class="policom-container">
+		<div class="policom">
+			<span class="pol">POL</span><span class="ic">IC</span><span class="om">OM.</span>
+		</div>
+		<div class="ks">Syria Civil War | Case Study | Chartist.JS</div>
+	</div>
+
+
+	<div class='navbar' title='Menu'>
+		 <i class="fa fa-bars" aria-hidden="true"></i>
+
+	</div>
+	<div class="close">
+		 <i class="fa fa-times" aria-hidden="true"></i>
+	</div>
+  <figure class="post-full-image" style="background-image: url(img/js.png">
+            </figure>
+<div class="container">
+  <div class="author">
+      <a href="https://twitter.com/mrrobsimpson" class="name">
+        <img src="https://pbs.twimg.com/profile_images/920782337671081986/y1tb7802_bigger.jpg" class="circle" /><br/>
+        @MrRobSimpson
+      </a>
+      <p>Designer @eyekiller | Studying Interaction Design in Belfast | #ixdbelfast</p>
+      <strong>Creator of Policom.</strong>
+    </div>
+  <section class="card">
+
+      <h1>Syrian Civil War: The Numbers</h1>
+      <p>'A peaceful uprising against the president of Syria seven years ago has turned into a full-scale civil war. The conflict has left more than 350,000 people dead, devastated cities and drawn in other countries.'</p>
+      <article>
+        <div class="ct-chart ct-perfect-fourth" id="chart1"></div>
+      </article>
+  <p>The above chart displays the death tolls of innocent people killed in Syria from 2014 to 2017. The red line displays 2017, the orange line represents 2016, 2015 is the yellow line and 2014 is the brown line.</p>
+
+  <p>We hear so much about the Syrian Civil War crisis and about how people from Syria try to flee to the safety of other countries, which in itself has plenty of difficulties. </p>
+  <article>
+    <div class="ct-chart ct-perfect-fourth" id="chart3"></div>
+  </article>
+  <p>This second data visual shows Trend of Registered Syrian Refugees (in-camp) from all the way back in January 2013 with the number gradually rising toward the 600,000 thousand mark.</p>
+  <article>
+    <div class="ct-chart ct-perfect-fourth" id="chart4"></div>
+  </article>
+      <p>Here we take a look at the number of refugees taken from several different European countries. These numbers are taken from 2015, while I still plan to work on the newer numbers, as of right now they are seemingly disputed. Nonetheless, we hear quite a lot about this story on the news but seeing the visuals makes it much easier to digest.</p>
+
+  </section>
+</div>
+<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+		<script  src="js/TweenMax.min.js"></script>
+		<script  src="js/TimelineLite.min.js"></script>
+
+<script src="js/classie.js"></script>
+<script src="js/menu.js"></script>
+<script>var hotbod = document.querySelector("body");
+
+function doStuff() {
+hotbod.className += " animate";
+}
+
+window.onload = function() {
+doStuff();
+}; </script>
+
+<script>
+var navigation = new TimelineLite({paused:true, reversed:true});
+navigation.to("#navigationwrapper", 0.5, {opacity: 1, display: 'block'})
+			.to(".navbar", 0.3, {opacity: 0}, "-=0.1")
+			.to(".close", 0.3, {display: "block", opacity: 1}, "-=0.1")
+			.from(".menu", 0.5, {opacity: 0, y: 30})
+			.from(".social", 0.5, {opacity: 0});
+
+$(".navbar, .close").click (function() {
+navigation.reversed() ? navigation.play() : navigation.reverse();
+})</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function(e) {
+document.body.classList.remove('fade');
+});
+</script>
+</body>
+<footer>
+	<div class="tomottoWrap">
+			<div id="tomotto">
+				"By visualizing information, we turn it into a landscape that you can explore with your eyes..." - D. McCandless
+			</div>
+		</div>
+		<div class="lookWrap">
+			<div id="look">
+				<div class="group">
+					<h3>Information</h3>
+					<a href="faq.html">FAQs</a>
+					<a href="mailto:hi@rob-simpson.co.uk?">Contact Us</a>
+
+				</div>
+				<div class="group">
+					<h3>Project Documents</h3>
+					<a href="https://drive.google.com/drive/folders/1N2ecQgcJp6pNu9kcmvAdIMmtMtwfth68">Google Drive</a>
+
+				</div>
+				<div class="group">
+					<h3>Follow Us</h3>
+					<a href="https://github.com/MrRobbieSimpson/policom">Github</a>
+					<a href="https://www.twitter.com/ProjectPolicom">Twitter</a>
+					<a href="http://ixd-final-year-inspiration.ghost.io/">Blog</a>
+
+				</div>
+				<div class="group">
+					<h3>About Us</h3>
+					<a href="about.html">About</a>
+				</div>
+			</div>
+		</div>
+		<div class="legality">
+					© Copyright 2018 Policom.
+				</div>
+	</div>
+</footer>
+<script>
+var chart = new Chartist.Line('.ct-chart', {
+  labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'Sept', 'Oct', 'Nov', 'Dec'],
+  series: [
+    [781, 876, 1134, 1014, 964, 848, 814, 772, 912, 923, 996, 569],
+    [1382,  1378, 623, 1041, 872, 1271, 1557, 1521, 1176, 1106, 1402, 827],
+    [1354,  1547, 1697, 2231, 2223, 2137, 1674, 2040, 1497, 1771, 1481, 1793],
+    [0,  0, 2867, 3397, 3204, 2692, 2549, 2591, 2375, 1987, 1685, 1851]
+  ]
+}, {
+  low: 0
+});
+
+
+var seq = 0,
+  delays = 80,
+  durations = 500;
+
+// Once the chart is fully created we reset the sequence
+chart.on('created', function() {
+  seq = 0;
+});
+
+//SMIL animations
+chart.on('draw', function(data) {
+  seq++;
+
+  if(data.type === 'line') {
+    // If the drawn element is a line we do a simple opacity fade in. This could also be achieved using CSS3 animations.
+    data.element.animate({
+      opacity: {
+        // The delay when we like to start the animation
+        begin: seq * delays + 1000,
+        // Duration of the animation
+        dur: durations,
+        // The value where the animation should start
+        from: 0,
+        // The value where it should end
+        to: 1
+      }
+    });
+  } else if(data.type === 'label' && data.axis === 'x') {
+    data.element.animate({
+      y: {
+        begin: seq * delays,
+        dur: durations,
+        from: data.y + 100,
+        to: data.y,
+
+        easing: 'easeOutQuart'
+      }
+    });
+  } else if(data.type === 'label' && data.axis === 'y') {
+    data.element.animate({
+      x: {
+        begin: seq * delays,
+        dur: durations,
+        from: data.x - 100,
+        to: data.x,
+        easing: 'easeOutQuart'
+      }
+    });
+  } else if(data.type === 'point') {
+    data.element.animate({
+      x1: {
+        begin: seq * delays,
+        dur: durations,
+        from: data.x - 10,
+        to: data.x,
+        easing: 'easeOutQuart'
+      },
+      x2: {
+        begin: seq * delays,
+        dur: durations,
+        from: data.x - 10,
+        to: data.x,
+        easing: 'easeOutQuart'
+      },
+      opacity: {
+        begin: seq * delays,
+        dur: durations,
+        from: 0,
+        to: 1,
+        easing: 'easeOutQuart'
+      }
+    });
+  } else if(data.type === 'grid') {
+
+    var pos1Animation = {
+      begin: seq * delays,
+      dur: durations,
+      from: data[data.axis.units.pos + '1'] - 30,
+      to: data[data.axis.units.pos + '1'],
+      easing: 'easeOutQuart'
+    };
+
+    var pos2Animation = {
+      begin: seq * delays,
+      dur: durations,
+      from: data[data.axis.units.pos + '2'] - 100,
+      to: data[data.axis.units.pos + '2'],
+      easing: 'easeOutQuart'
+    };
+
+    var animations = {};
+    animations[data.axis.units.pos + '1'] = pos1Animation;
+    animations[data.axis.units.pos + '2'] = pos2Animation;
+    animations['opacity'] = {
+      begin: seq * delays,
+      dur: durations,
+      from: 0,
+      to: 1,
+      easing: 'easeOutQuart'
+    };
+
+    data.element.animate(animations);
+  }
+});
+
+
+
+
+chart.on('created', function() {
+  if(window.__exampleAnimateTimeout) {
+    clearTimeout(window.__exampleAnimateTimeout);
+    window.__exampleAnimateTimeout = null;
+  }
+  window.__exampleAnimateTimeout = setTimeout(chart.update.bind(chart), 12000);
+});
+
+
+
+</script>
+
+<script> var chart = new Chartist.Line('#chart3', {
+  labels: ['Jan 13', 'Jul 13', 'Jan 14', 'Jul 14', 'Jan 15', 'Jul 15', 'Jan 16', 'Jul 16', 'Jan 17', 'Jul 17', 'Jan 18'],
+  series: [
+    [346388, 1724127, 2338226, 2873663, 3775629, 3952796, 4567347, 4789208, 4820620, 5105698, 5479998]
+  ]
+}, {
+  // Remove this configuration to see that chart rendered with cardinal spline interpolation
+  // Sometimes, on large jumps in data values, it's better to use simple smoothing.
+  lineSmooth: Chartist.Interpolation.simple({
+    divisor: 2
+  }),
+  fullWidth: true,
+  chartPadding: {
+    right: 20
+  },
+  low: 0
+});
+</script>
+
+<script>new Chartist.Bar('#chart4', {
+  labels: ['Germany', 'USA', 'Canada', 'Sweden', 'Brazil', 'Austrailia', 'Switzerland', 'France', 'Ireland', 'UK' ],
+  series: [30000, 13586, 11300, 7400, 7000, 5600, 3500, 2400, 721, 187]
+}, {
+  distributeSeries: true
+});
+</script>
+
+
+
+</html>
